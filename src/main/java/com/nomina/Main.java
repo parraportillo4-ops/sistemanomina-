@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Se crean ejemplos de cada tipo de empleado.
         Empleado asalariado = new EmpleadoAsalariado(
                 "Carlos",
                 "1001",
@@ -43,12 +44,14 @@ public class Main {
                 6
         );
 
+        // Se muestra el resultado de cada empleado.
         mostrarNomina(asalariado);
         mostrarNomina(porHoras);
         mostrarNomina(comision);
         mostrarNomina(temporal);
     }
 
+    // Muestra de forma organizada los resultados de la nómina.
     private static void mostrarNomina(Empleado empleado) {
 
         System.out.println("------------------------------");

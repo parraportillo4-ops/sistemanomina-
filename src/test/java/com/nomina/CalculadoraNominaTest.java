@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculadoraNominaTest {
 
+    // Verifica que el empleado reciba el bono después de 5 años.
     @Test
     void debeCalcularBonoDeEmpleadoAsalariado() {
 
@@ -24,6 +25,7 @@ public class CalculadoraNominaTest {
         );
     }
 
+    // Comprueba que no se permitan horas negativas.
     @Test
     void noDebePermitirHorasNegativas() {
 
@@ -40,6 +42,7 @@ public class CalculadoraNominaTest {
         );
     }
 
+    // Comprueba que las ventas no puedan ser negativas.
     @Test
     void noDebePermitirVentasNegativas() {
 

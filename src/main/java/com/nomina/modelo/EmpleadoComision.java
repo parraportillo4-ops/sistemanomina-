@@ -1,5 +1,6 @@
 package com.nomina.modelo;
 
+// Representa a un empleado que recibe salario base y comisión por ventas.
 public class EmpleadoComision extends Empleado {
 
     private double salarioBase;
@@ -16,15 +17,16 @@ public class EmpleadoComision extends Empleado {
 
         super(nombre, identificacion, añosEmpresa);
 
+        // Se validan los valores relacionados con el salario y las ventas.
         if (salarioBase < 0) {
             throw new IllegalArgumentException(
-                "El salario base no puede ser negativo."
+                    "El salario base no puede ser negativo."
             );
         }
 
         if (ventas < 0) {
             throw new IllegalArgumentException(
-                "Las ventas no pueden ser negativas."
+                    "Las ventas no pueden ser negativas."
             );
         }
 
@@ -33,11 +35,13 @@ public class EmpleadoComision extends Empleado {
         this.porcentajeComision = porcentajeComision;
     }
 
+    // El salario bruto combina el salario base con las comisiones.
     @Override
     public double calcularSalarioBruto() {
         return salarioBase + (ventas * porcentajeComision);
     }
 
+    // Se entrega un bono del 3% cuando las ventas superan 20 millones.
     @Override
     public double calcularBonos() {
 
@@ -48,14 +52,15 @@ public class EmpleadoComision extends Empleado {
         return 0;
     }
 
+    // Los empleados permanentes reciben el bono de alimentación.
     @Override
     public double calcularBeneficios() {
         return 1_000_000;
     }
 
+    // Se descuenta el 4% del salario bruto.
     @Override
     public double calcularDeducciones() {
-
         return calcularSalarioBruto() * 0.04;
     }
 }
